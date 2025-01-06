@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'oidc_provider',
     'authentication',
 ]
-
+# RSA key successfully created with kid: 8e0488010843796edb15d2efc4c3b517
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -127,17 +127,22 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-OIDC_CODE_EXPIRE = 60 * 10  # صلاحية رمز التفويض (10 دقائق)
-OIDC_ACCESS_TOKEN_EXPIRE = 60 * 60  # صلاحية رمز الوصول (ساعة واحدة)
-OIDC_ID_TOKEN_EXPIRE = 60 * 60  # صلاحية رمز المعرف (ساعة واحدة)
-OIDC_EXTRA_SCOPES = ['openid', 'profile', 'email']
+# OIDC_CODE_EXPIRE = 60 * 10  # صلاحية رمز التفويض (10 دقائق)
+# OIDC_ACCESS_TOKEN_EXPIRE = 60 * 60  # صلاحية رمز الوصول (ساعة واحدة)
+# OIDC_ID_TOKEN_EXPIRE = 60 * 60  # صلاحية رمز المعرف (ساعة واحدة)
+# OIDC_EXTRA_SCOPES = ['openid', 'profile', 'email']
 
+OIDC_PROVIDER = {
+    'OIDC_CODE_EXPIRE': 3600,  # مدة صلاحية الكود
+    'OIDC_ID_TOKEN_EXPIRE': 3600,  # مدة صلاحية رمز التعريف
+    'OIDC_USERINFO': 'myapp.utils.userinfo',  # دالة لتوفير بيانات المستخدم
+}
 
-# وظيفة لتخصيص معلومات المستخدم
-def oidc_userinfo(claims, user):
-    claims['name'] = user.get_full_name()
-    claims['email'] = user.email
-    return claims
+# # وظيفة لتخصيص معلومات المستخدم
+# def oidc_userinfo(claims, user):
+#     claims['name'] = user.get_full_name()
+#     claims['email'] = user.email
+#     return claims
 
-OIDC_USERINFO = oidc_userinfo
+# OIDC_USERINFO = oidc_userinfo
 LOGIN_URL = '/accounts/login/'
