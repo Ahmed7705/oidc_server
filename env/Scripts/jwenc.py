@@ -1,4 +1,4 @@
-#!C:\Users\ahmed\Desktop\Projects\SSO\oidc_server\env\Scripts\python.exe
+#!C:\Users\ahmed\Desktop\SSO Project\SSO\oidc_server\env\Scripts\python.exe
 from __future__ import print_function
 import argparse
 

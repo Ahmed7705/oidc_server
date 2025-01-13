@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'oidc_provider.middleware.SessionManagementMiddleware'
 ]
 import os
 
@@ -146,3 +147,5 @@ OIDC_PROVIDER = {
 
 # OIDC_USERINFO = oidc_userinfo
 LOGIN_URL = '/accounts/login/'
+OIDC_SESSION_MANAGEMENT_ENABLE = True
+

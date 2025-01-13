@@ -1,4 +1,4 @@
-#!C:\Users\ahmed\Desktop\Projects\SSO\oidc_server\env\Scripts\python.exe
+#!C:\Users\ahmed\Desktop\SSO Project\SSO\oidc_server\env\Scripts\python.exe
 import json
 from Cryptodome.PublicKey import RSA
 import argparse

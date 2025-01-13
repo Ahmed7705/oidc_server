@@ -1,4 +1,4 @@
-#!C:\Users\ahmed\Desktop\Projects\SSO\oidc_server\env\Scripts\python.exe
+#!C:\Users\ahmed\Desktop\SSO Project\SSO\oidc_server\env\Scripts\python.exe
 import sys
 
 __author__ = 'rohe0002'
